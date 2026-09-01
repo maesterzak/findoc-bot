@@ -7,6 +7,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django.http import HttpResponse
+
 
 
 class WhatsAppWebhookView(APIView):
@@ -24,20 +26,22 @@ class WhatsAppWebhookView(APIView):
         print(f"{token == WHATSAPP_VERIFY_TOKEN}")
         print(f"{WHATSAPP_VERIFY_TOKEN}")
         if mode == "subscribe" and token == WHATSAPP_VERIFY_TOKEN:
-            return Response(
+            return HttpResponse(
                 challenge,
-                status=status.HTTP_200_OK
+                status=status.HTTP_200_OK,
+                content_type="text/plain"
             )
 
-        return Response(
+        return HttpResponse(
             {"error": "Invalid verify token"},
-            status=status.HTTP_403_FORBIDDEN
+            status=status.HTTP_403_FORBIDDEN,
+            content_type="text/plain"
         )
 
     def post(self, request):
         print("WhatsApp message received:")
         print(request.data)
 
-        return Response({
+        return HttpResponse({
             "status": "received"
-        }, status=status.HTTP_200_OK)
+        }, status=status.HTTP_200_OK, content_type="text/plain")
