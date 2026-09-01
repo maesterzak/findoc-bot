@@ -17,6 +17,12 @@ class WhatsAppWebhookView(APIView):
         challenge = request.GET.get("hub.challenge")
 
         WHATSAPP_VERIFY_TOKEN = os.getenv("WHATSAPP_VERIFY_TOKEN")
+        print(f"WHATSAPP_VERIFY_TOKEN: {WHATSAPP_VERIFY_TOKEN}")
+        print(f"Received token: {token}")
+        print(f"Received mode: {mode}")
+        print(f"Received challenge: {challenge}")
+        print(f"{token == WHATSAPP_VERIFY_TOKEN}")
+        print(f"{WHATSAPP_VERIFY_TOKEN}")
         if mode == "subscribe" and token == WHATSAPP_VERIFY_TOKEN:
             return Response(
                 challenge,
