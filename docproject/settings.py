@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     "elaine-prehensile-pseudoconservatively.ngrok-free.dev",
     "localhost",
     "127.0.0.1",
-    "*.vercel.app", "*.now.sh"
+    "*.vercel.app", "*.now.sh","findoc-bot.vercel.app"
 ]
 
 
