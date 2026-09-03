@@ -45,3 +45,15 @@ class WhatsAppWebhookView(APIView):
         return HttpResponse({
             "status": "received"
         }, status=status.HTTP_200_OK, content_type="text/plain")
+        
+
+class TelegramWebhookView(APIView):
+
+    def post(self, request):
+        print("========== TELEGRAM UPDATE ==========")
+        print(request.data)
+        print("=====================================")
+
+        return Response({
+            "status": "received"
+        })        
