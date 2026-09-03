@@ -37,7 +37,7 @@ ALLOWED_HOSTS = [
     "*.vercel.app", "*.now.sh","findoc-bot.vercel.app"
 ]
 
-
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 # Application definition
 
 INSTALLED_APPS = [
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'googleconnect.apps.GoogleconnectConfig',
     'whatsapp.apps.WhatsappConfig',
+    'telegram.apps.TelegramConfig',
 ]
 
 MIDDLEWARE = [
