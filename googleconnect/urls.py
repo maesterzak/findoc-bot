@@ -1,6 +1,8 @@
 from django.urls import path
+from .views import google_login, google_callback
 
 
 urlpatterns = [
-    # path('webhook/', TelegramWebhookView.as_view()),
+    path("login/", google_login),
+    path("callback/", google_callback),
 ]

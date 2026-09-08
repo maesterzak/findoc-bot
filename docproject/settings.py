@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'googleconnect.apps.GoogleconnectConfig',
     'whatsapp.apps.WhatsappConfig',
     'telegram.apps.TelegramConfig',
+    'docapp.apps.DocappConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,10 +89,10 @@ WSGI_APPLICATION = 'docproject.wsgi.application'
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -139,6 +140,8 @@ STATIC_URL = 'static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 

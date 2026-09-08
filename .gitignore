@@ -154,4 +154,6 @@ cython_debug/
 migrations/
 staticfiles_build/
 
+client_secret.json
+migrations
 # End of https://www.toptal.com/developers/gitignore/api/django

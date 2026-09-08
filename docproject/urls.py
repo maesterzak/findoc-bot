@@ -22,9 +22,9 @@ from docproject import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('api/whatsapp/', include('whatsapp.urls')),
-   
-     path('api/telegram/', include('telegram.urls')),
+    path('api/whatsapp/', include('whatsapp.urls')),
+    path('api/telegram/', include('telegram.urls')),
+    path('api/google/', include('googleconnect.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
