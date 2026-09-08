@@ -17,6 +17,8 @@ from dotenv import load_dotenv
 import dj_database_url
 load_dotenv()
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +40,7 @@ ALLOWED_HOSTS = [
 ]
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    # PostgreSQL-specific features
+    "django.contrib.postgres",
     'api.apps.ApiConfig',
     'googleconnect.apps.GoogleconnectConfig',
     'whatsapp.apps.WhatsappConfig',
